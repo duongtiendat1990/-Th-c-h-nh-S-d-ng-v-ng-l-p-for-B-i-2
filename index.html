@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input type="number" id="number" min="0" onkeyup="calculate();"></td>
+        <td><p>Please enter your number</p></td>
+    </tr>
+    <tr>
+        <td><input type="number" id="result" readonly></td>
+        <td><p>Total</p></td>
+    </tr>
+</table>
+<script>
+
+    function calculate() {
+        let number = document.getElementById("number").value;
+        let total = 0;
+        let i = 1;
+        for (; i<=number;i++) {
+            total +=i
+        }
+     document.getElementById("result").value = total;
+    }
+    function listen() {
+        document.addEventListener('keydown', Check);
+    }
+    function Check(e) {
+        var keyCode = (event.key);
+        if (keyCode == '+' || keyCode == '-' || keyCode == '.') {
+            e.preventDefault()
+        }
+    }
+</script>
+</body>
+</html>
